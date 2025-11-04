@@ -1,0 +1,7 @@
+Which recommendation strategy you can implement ? 
+
+The recommendation strategy i can implemente is co-purchase: we recommend products that were bought by other customers who purchased the same items as the target user, ranking results by co-occurrence frequency. It’s easy to explain, performs well on small or sparse datasets, and produces sensible suggestions without heavy modeling. To improve coverage and quality, I would add item–item similarity (e.g., Jaccard or cosine via Neo4j GDS) to generalize beyond exact overlaps, apply a light popularity boost to stabilize rankings, and handle cold-start with content-based or trending recommendations.
+
+What’s improvements you’d make for transforming this mini project into production ready code ?
+
+To make the project production-ready, I would make the ETL idempotent and incremental with validation, constraints, and indexes; externalize configuration and secrets; and add structured logging, metrics, and tracing for observability. The API would include authentication, rate limiting, CORS, timeouts, pagination, and caching. I would introduce automated tests and CI/CD, plus backup and restore procedures for Postgres and Neo4j. Finally, I would containerize and monitor the stack with health checks and dashboards to support safe rolling deployments.
